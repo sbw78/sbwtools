@@ -1,6 +1,6 @@
 #' My standard customized kable format using kableExtra
 #'
-#' @seealso [knitr::kable()] and [kableExtra::kable_styling()]
+#' @seealso \code{\link[knitr]{kable}} and \code{\link[kableExtra]{kable_styling}}
 #' @inheritParams knitr::kable
 
 custom_kable <- function(data,

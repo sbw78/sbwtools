@@ -42,5 +42,5 @@ Create a forest plot
 forest_plot
 }
 \seealso{
-[tidyr::pivot_longer()], [ggplot2::ggplot()]
+\code{\link[tidyr]{pivot_longer}}, \code{\link[ggplot2]{ggplot}}
 }

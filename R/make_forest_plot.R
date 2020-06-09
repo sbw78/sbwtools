@@ -1,7 +1,7 @@
 #' Create a forest plot
 #'
 #' @return A ggplot plot
-#' @seealso [tidyr::pivot_longer()], [ggplot2::ggplot()]
+#' @seealso \code{\link[tidyr]{pivot_longer}}, \code{\link[ggplot2]{ggplot}}
 #' @param d A data frame in long format that has boundary values for a confidence interval
 #' @param .measure_var Numeric variable to be plotted on the x-axis
 #' @param .group_var Factor or character variable to differentiate plots
