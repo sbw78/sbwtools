@@ -26,9 +26,9 @@ make_forest_plot(
 
 \item{ylab}{Label for y-axis}
 
-\item{ci_low}{Minimum confidence interval variable. Defaults to `ci_low`}
+\item{ci_low}{Minimum confidence interval variable. Defaults to \code{ci_low}}
 
-\item{ci_high}{Maximum confidence interval variable Defaults to `ci_high`}
+\item{ci_high}{Maximum confidence interval variable Defaults to \code{ci_high}}
 
 \item{xintercept}{Value of x-intercept for vertical dotted line}
 }

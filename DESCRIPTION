@@ -1,13 +1,15 @@
 Package: sbwtools
-Type: Package
-Title: sbwtools
-Version: 0.0.1
-Author: S. Bryan West
-Maintainer: S. Bryan West <sbw78@cornell.edu>
-Description: This package contains my custom functions that I use regularly.
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "S. Bryan",
+           family = "West",
+           role = c("aut", "cre", "dtc"),
+           email = "sbw78@cornell.edu",
+           comment = c(ORCID = "0000-0003-3327-0499"))
+Description: This is a package that contains some of the functions I have written or picked up and use frequently in my work..
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-URL: https://github.com/sbw78/sbwtools
-BugReports: https://github.com/sbw78/sbwtools/issues
+Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.0

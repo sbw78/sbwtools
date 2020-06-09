@@ -14,7 +14,7 @@ install_load_packages()
 \item{packages}{A list of the packages you want to load}
 
 \item{github_packages}{A list of the github packages and their repos.
-`package` = package names, `repo` = package repos}
+\code{package} = package names, \code{repo} = package repos}
 }
 \description{
 Install and load packages

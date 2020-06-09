@@ -21,7 +21,7 @@ to FALSE.}
 \item{B}{Number of bootstrap resamples. Defaults to 1000.}
 }
 \value{
-A data frame with variables `mean`, `ci_low`, `ci_high`, `sd`, `n`.
+A data frame with variables \code{mean}, \code{ci_low}, \code{ci_high}, \code{sd}, \code{n}.
 If the data frame is grouped, grouping variable will also be listed.
 }
 \description{
@@ -31,5 +31,5 @@ Calculate mean with confidence intervals from boostrapped samples.
 ci_boot_df(mtcars, mpg, cyl, gear)
 }
 \seealso{
-[Hmisc::smean.cl.boot()] which this function utilizes
+\code{\link[Hmisc:smean.cl.boot]{Hmisc::smean.cl.boot()}} which this function utilizes
 }

@@ -19,7 +19,7 @@ ci_df(.data, .summary_var, ..., ci = 0.95, groups_col = FALSE)
 to FALSE.}
 }
 \value{
-A data frame with variables `mean`, `ci_low`, `ci_high`, `sd`, `n`.
+A data frame with variables \code{mean}, \code{ci_low}, \code{ci_high}, \code{sd}, \code{n}.
 If the data frame is grouped, grouping variable will also be listed.
 }
 \description{
@@ -29,5 +29,5 @@ Calculate mean with confidence intervals.
 ci_df(mtcars, mpg, cyl, gear)
 }
 \seealso{
-[Hmisc::smean.cl.normal()] which this function utilizes
+\code{\link[Hmisc:smean.cl.normal]{Hmisc::smean.cl.normal()}} which this function utilizes
 }
