@@ -1,6 +1,17 @@
 Package: sbwtools
-Title: What the Package Does (One Line, Title Case)
+Title: My most frequently used functions
 Version: 0.0.0.9000
+Imports:
+    devtools,
+    dplyr,
+    ggplot2,
+    Hmisc,
+    jtools,
+    knitr,
+    kableExtra,
+    tidyr,
+    stats,
+    utils
 Authors@R: 
     person(given = "S. Bryan",
            family = "West",

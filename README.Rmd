@@ -1,3 +1,7 @@
+<!-- badges: start -->
+  [![R build status](https://github.com/sbw78/sbwtools/workflows/R-CMD-check/badge.svg)](https://github.com/sbw78/sbwtools/actions)
+  <!-- badges: end -->
+
 # sbwtools
 
 <!-- badges: start --> <!-- badges: end -->
@@ -8,7 +12,7 @@
 
 You can install the released version of sbwtools from github with:
 
-``` r 
+```{r eval = FALSE}  
 devtools::install_github("sbw78/sbwtools")
 ```
 
@@ -38,3 +42,12 @@ takes a list of github packages and their repos.
 `regex_build`: Combine a character vector into a single regex list.
 
 `se`: Calculate standard error.
+
+## System Information
+
+Updated on `r Sys.time()`
+
+```{r}
+Sys.info()
+```
+

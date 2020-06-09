@@ -1,20 +1,15 @@
-#' My standard customized kable format using kableExtra
+#' custom_kable: A customized format using for printing tables
 #'
+#' This function uses `knitr::kable()` and `kableExtra::kable_styling` to build
+#' a customized table that, in my opinion, looks better than the default.
+#'
+#' @param data A data frame or tibble. Matrices usually work, except when they don't.
+#' @inherit knitr::kable
 #' @seealso See \code{\link[knitr]{kable}} and \code{\link[kableExtra]{kable_styling}}
-#' @inheritParams knitr::kable
+#' @export
+#' @examples custom_kable(df, caption = "A caption")
 
-custom_kable <- function(data,
-                         digits = 3,
-                         caption = NA,
-                         col.names = NA,
-                         row.names = NA,
-                         format = NULL,
-                         escape = TRUE,
-                         format.args = list()) {
-  require(knitr)
-  require(kableExtra)
-
-
+custom_kable <- function(data, digits = 3, caption = NA, col.names = NA, row.names = NA, format = NULL, escape = TRUE, format.args = list()) {
   out_table <- knitr::kable(data,
                             escape = escape,
                             format = format,

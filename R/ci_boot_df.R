@@ -13,6 +13,7 @@ ci_boot_df <- function(.data, .summary_var, ..., ci = 0.95, groups_col = FALSE,
                        B = 1000) {
   require(dplyr)
   require(Hmisc)
+  require(tidyr)
   # check function args ----
   df <- .data
   if (missing(.summary_var)) {
@@ -38,8 +39,8 @@ ci_boot_df <- function(.data, .summary_var, ..., ci = 0.95, groups_col = FALSE,
   # Build output df ----
   boot_df <- dplyr::summarize(df,
                               ci_out = Hmisc::smean.cl.boot(!!summary_var,
-                                                            conf.int = ci
-                                                            , B = 1000),
+                                                            conf.int = ci,
+                                                            B = 1000),
                               conf = c(paste0("mean"), "ci_low", "ci_high"),
                               sd = stats::sd(!!summary_var, na.rm = TRUE),
                               n = dplyr::n())

@@ -2,7 +2,7 @@
 % Please edit documentation in R/custom_kable.R
 \name{custom_kable}
 \alias{custom_kable}
-\title{My standard customized kable format using kableExtra}
+\title{custom_kable: A customized format using for printing tables}
 \usage{
 custom_kable(
   data,
@@ -16,6 +16,8 @@ custom_kable(
 )
 }
 \arguments{
+\item{data}{A data frame or tibble. Matrices usually work, except when they don't.}
+
 \item{digits}{Maximum number of digits for numeric columns, passed to
 \code{round()}. This can also be a vector of length \code{ncol(x)}, to set
 the number of digits for individual columns.}
@@ -41,8 +43,26 @@ that special characters will not trigger syntax errors in LaTeX or HTML.}
 \item{format.args}{A list of arguments to be passed to \code{\link{format}()}
 to format table values, e.g. \code{list(big.mark = ',')}.}
 }
+\value{
+A character vector of the table source code.
+}
 \description{
-My standard customized kable format using kableExtra
+This function uses \code{knitr::kable()} and \code{kableExtra::kable_styling} to build
+a customized table that, in my opinion, looks better than the default.
+}
+\details{
+Missing values (\code{NA}) in the table are displayed as \code{NA} by
+default. If you want to display them with other characters, you can set the
+option \code{knitr.kable.NA}, e.g. \code{options(knitr.kable.NA = '')} to
+hide \code{NA} values.
+}
+\examples{
+custom_kable(df, caption = "A caption")
+}
+\references{
+See
+  \url{https://github.com/yihui/knitr-examples/blob/master/091-knitr-table.Rnw}
+   for some examples in LaTeX, but they also apply to other document formats.
 }
 \seealso{
 See \code{\link[knitr]{kable}} and \code{\link[kableExtra]{kable_styling}}

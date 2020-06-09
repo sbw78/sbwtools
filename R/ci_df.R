@@ -14,8 +14,6 @@
 #' ci_df(mtcars, mpg, cyl, gear)
 
 ci_df <- function(.data, .summary_var, ..., ci = 0.95, groups_col = FALSE) {
-  require(dplyr)
-  require(Hmisc)
 
   # check function args ----
   df <- .data
