@@ -10,3 +10,4 @@ Encoding: UTF-8
 LazyData: true
 URL: https://github.com/sbw78/sbwtools
 BugReports: https://github.com/sbw78/sbwtools/issues
+RoxygenNote: 7.1.0
