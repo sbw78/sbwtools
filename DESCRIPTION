@@ -8,3 +8,5 @@ Description: This package contains my custom functions that I use regularly.
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+URL: https://github.com/sbw78/sbwtools
+BugReports: https://github.com/sbw78/sbwtools/issues
