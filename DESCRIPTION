@@ -1,0 +1,11 @@
+Package: sbwtools
+Type: Package
+Title: What the Package Does (Title Case)
+Version: 0.0.1
+Author: S. Bryan West
+Maintainer: S. Bryan West <sbw78@cornell.edu>
+Description: More about what it does (maybe more than one line)
+    Use four spaces when indenting paragraphs within the Description.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
