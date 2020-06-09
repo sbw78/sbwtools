@@ -45,5 +45,5 @@ to format table values, e.g. \code{list(big.mark = ',')}.}
 My standard customized kable format using kableExtra
 }
 \seealso{
-\code{\link[knitr]{kable}} and \code{\link[kableExtra]{kable_styling}}
+See \code{\link[knitr]{kable}} and \code{\link[kableExtra]{kable_styling}}
 }
