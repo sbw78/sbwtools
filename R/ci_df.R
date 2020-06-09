@@ -1,6 +1,6 @@
 #' Calculate mean with confidence intervals.
 #'
-#' @seealso [Hmisc::smean.cl.normal()] which this function utilizes
+#' @seealso \code{\link[Hmisc]{smean.cl.normal}} which this function utilizes
 #' @return A data frame with variables `mean`, `ci_low`, `ci_high`, `sd`, `n`.
 #' If the data frame is grouped, grouping variable will also be listed.
 #' @param .data A data frame

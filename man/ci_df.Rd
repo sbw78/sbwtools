@@ -29,5 +29,5 @@ Calculate mean with confidence intervals.
 ci_df(mtcars, mpg, cyl, gear)
 }
 \seealso{
-\code{\link[Hmisc:smean.cl.normal]{Hmisc::smean.cl.normal()}} which this function utilizes
+\code{\link[Hmisc]{smean.cl.normal}} which this function utilizes
 }
