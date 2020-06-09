@@ -7,7 +7,7 @@
 #' @inherit knitr::kable
 #' @seealso See \code{\link[knitr]{kable}} and \code{\link[kableExtra]{kable_styling}}
 #' @export
-#' @examples custom_kable(df, caption = "A caption")
+#' @examples custom_kable(mtcars, caption = "A kable of mtcars")
 
 custom_kable <- function(data, digits = 3, caption = NA, col.names = NA, row.names = NA, format = NULL, escape = TRUE, format.args = list()) {
   out_table <- knitr::kable(data,

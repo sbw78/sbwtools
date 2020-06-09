@@ -11,21 +11,25 @@
 #' @export
 #' @examples
 #' packages <- c("tidyverse", "here", "lubridate")
-#' github_packages <- list(package = c("fancyCorr", "report"), repo = c("sbw78/fancyCorr", "easystats/report"))
-#' The function pulls the variables from the global environment after they are defined
-#' install_load_packages()
+#'
+#' github_packages <- list(package = c("fancyCorr", "report"),
+#' repo = c("sbw78/fancyCorr", "easystats/report"))
+#'
+#' install_load_packages(packages, github_packages)
 
-install_load_packages <- function() {
-  packages <- get("packages", envir = globalenv())
-  if(exists("github_packages", envir = globalenv())) {
-    github_packages <- get("github_packages", envir = globalenv())
+install_load_packages <- function(packages, github_packages) {
+
+  if (!missing(packages)) {
+    installed_packages <- packages %in% rownames(utils::installed.packages())
   } else {
-    github_packages <- NULL
+    stop("Missing packages")
   }
-  installed_packages <- packages %in% rownames(utils::installed.packages())
-  installed_github_packages <-
-    github_packages$package %in% rownames(utils::installed.packages())
+  if (missing(github_packages)) {
+    github_packages = NULL
+  }
 
+    installed_github_packages <-
+      github_packages$package %in% rownames(utils::installed.packages())
   if (any(installed_packages == FALSE)) {
     utils::install.packages(packages[!installed_packages])
   } else {
@@ -55,5 +59,9 @@ install_load_packages <- function() {
   } else {
     message("\n ...Packages were already loaded.\n")
   }
-  rm(packages, github_packages, envir = globalenv())
+  if (exists("packages", envir = globalenv())) {
+    rm(packages, envir = globalenv())
+  } else if (exists("github_packages", envir = globalenv())) {
+    rm(github_packages, envir = globalenv())
+  }
 }

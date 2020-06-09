@@ -18,5 +18,6 @@ A character vector of rounded p-values. Any p-values less than .001 are shown as
 Format p-value
 }
 \examples{
+p.value <- c(.01, .005, .00024)
 format_pval(p.value)
 }

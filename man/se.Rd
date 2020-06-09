@@ -15,5 +15,5 @@ se(x, na.rm = FALSE)
 A function to get the standard error
 }
 \examples{
-se(x, na.rm = TRUE)
+se(iris$Sepal.Length)
 }

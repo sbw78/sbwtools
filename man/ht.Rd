@@ -13,5 +13,5 @@ ht(d)
 Get first 10 and last 10 rows of a data frame
 }
 \examples{
-ht(d)
+ht(mtcars)
 }

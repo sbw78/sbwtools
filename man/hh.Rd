@@ -13,5 +13,5 @@ hh(d)
 Get first 5 rows and first 5 columns of a data frame or matrix
 }
 \examples{
-hh(d)
+hh(mtcars)
 }

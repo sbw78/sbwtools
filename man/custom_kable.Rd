@@ -57,7 +57,7 @@ option \code{knitr.kable.NA}, e.g. \code{options(knitr.kable.NA = '')} to
 hide \code{NA} values.
 }
 \examples{
-custom_kable(df, caption = "A caption")
+custom_kable(mtcars, caption = "A kable of mtcars")
 }
 \references{
 See

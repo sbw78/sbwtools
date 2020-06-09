@@ -1,53 +1,144 @@
-<!-- badges: start -->
-  [![R build status](https://github.com/sbw78/sbwtools/workflows/R-CMD-check/badge.svg)](https://github.com/sbw78/sbwtools/actions)
-  <!-- badges: end -->
+---
+author: S. Bryan West
+output: 
+  md_document:
+    variant: markdown_github
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
 
 # sbwtools
 
-<!-- badges: start --> <!-- badges: end -->
+<!-- badges: start -->
+<!-- badges: end -->
 
 **sbwtools** is a package containing my most frequently used custom functions.
-
-## Installation
-
-You can install the released version of sbwtools from github with:
-
-```{r eval = FALSE}  
-devtools::install_github("sbw78/sbwtools")
-```
-
-## Functions 
-
-`ci_df`: Build a dataframe with the mean and confidence intervals
-of a continuous variable, with optional grouping.
-
-`ci_boot_df`: Same as `ci_df`, but with bootstrapped sampling
-
-`custom_kable`: Customized `knitr::kable` output.
-
-`forma_pval`: Format p-values (i.e. "< .001" for values less than .001).
-
-`hh`: Get first 5 rows and first 5 columns of a data frame or matrix
-
-`ht`: Get the first 10 rows and last 10 rows of a data frame or matrix.
-
-`install_load_packages`: This function will check for each package in the
-user-defined and install them if they are missing, and then load them. It also
-takes a list of github packages and their repos.
-
-`last`: Get the last element of a vector or list
-
-`make_forest_plot`: Build a forest plot.
-
-`regex_build`: Combine a character vector into a single regex list.
-
-`se`: Calculate standard error.
 
 ## System Information
 
 Updated on `r Sys.time()`
 
 ```{r}
-Sys.info()
+sessioninfo::platform_info()
 ```
 
+## Installation
+
+sbwtools is only available from [GitHub](https://github.com/). Install with:
+
+```{r install info, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("sbw78/sbwtools")
+```
+
+## Function examples 
+
+`ci_df`: Build a dataframe with the mean and confidence intervals
+of a continuous variable, with optional grouping.
+
+```{r ci_df}
+library(sbwtools)
+library(dplyr)
+ci_data <- iris %>% 
+  as_tibble() %>% 
+  ci_boot_df(., Petal.Length, Species)
+```
+
+
+`ci_boot_df`: Same as `ci_df`, but with bootstrapped sampling
+
+```{r ci_boot_df}
+ci_boot_data <- iris %>% 
+  as_tibble() %>% 
+  ci_boot_df(., Petal.Length, Species)
+```
+
+
+`custom_kable`: Customized `knitr::kable` output.
+
+```{r custom_kable, eval = FALSE}
+custom_kable(ci_data, caption = "Summarized data from iris",
+             col.names = c("Species", "n", "Petal Length", "Lower CI", "Upper CI", "sd"))
+
+custom_kable(ci_data, caption = "Summarized data from iris",
+             col.names = c("Species", "n", "Petal Length", "Lower CI", "Upper CI", "sd")) %>% 
+  kableExtra::footnote(general = "1000 bootstrapped samples")
+```
+
+
+`format_pval`: Format p-values (i.e. "< .001" for values less than .001).
+
+```{r format_pval}
+fit <- lm(Sepal.Length ~ Species, data = iris)
+summary_df <- summary(fit) %>% broom::tidy()
+
+# Without formatting p-value
+summary_df
+
+# Formatted p-value
+mutate(summary_df, p.value = format_pval(p.value))
+```
+
+
+`hh`: Get first 5 rows and first 5 columns of a data frame or matrix
+
+`ht`: Get the first 10 rows and last 10 rows of a data frame or matrix.
+
+```{r hh ht}
+hh(iris)
+
+ht(iris)
+```
+
+
+`install_load_packages`: This function will check for each package in the
+user-defined and install them if they are missing, and then load them. It also
+takes a list of github packages and their repos.
+
+```{r install_load_packages, eval = FALSE}
+packages <- c("tidyverse", "devtools")
+github_packages <- list(package = c("fancyCorr", "report"),
+                        repo = c("sbw78/fancyCorr", "easystats/report"))
+
+install_load_packages(packages, github_packages)
+```
+
+`last`: Get the last element of a vector or list
+
+```{r}
+last(letters)
+```
+
+
+`make_forest_plot`: Build a forest plot.
+
+```{r make_forest_plot}
+p <- make_forest_plot(ci_data, mean_Petal.Length, Species, xlab = "Mean petal length",
+                 ylab = "Species", ci_low = ci_low, ci_high = ci_high)
+
+p
+```
+
+
+`regex_build`: Combine a character vector into a single regex list.
+
+```{r regex_build}
+regex_build(c("apples", "oranges", "bananas"))
+regex_build(c("apples", "passion fruit", "oranges"), modifier = "multi")
+```
+
+
+`se`: Calculate standard error.
+
+```{r se}
+se(iris$Sepal.Length)
+```

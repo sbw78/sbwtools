@@ -8,7 +8,7 @@ This function will check for each package in the user-ddefined and install
 them if they are missing, and then load them. It also takes a list of github
 packages and their repos.}
 \usage{
-install_load_packages()
+install_load_packages(packages, github_packages)
 }
 \arguments{
 \item{packages}{A list of the packages you want to load}
@@ -25,9 +25,11 @@ packages and their repos.
 }
 \examples{
 packages <- c("tidyverse", "here", "lubridate")
-github_packages <- list(package = c("fancyCorr", "report"), repo = c("sbw78/fancyCorr", "easystats/report"))
-The function pulls the variables from the global environment after they are defined
-install_load_packages()
+
+github_packages <- list(package = c("fancyCorr", "report"),
+repo = c("sbw78/fancyCorr", "easystats/report"))
+
+install_load_packages(packages, github_packages)
 }
 \author{
 Bryan West

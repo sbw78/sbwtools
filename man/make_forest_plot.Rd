@@ -38,9 +38,6 @@ A ggplot plot
 \description{
 Create a forest plot
 }
-\examples{
-forest_plot
-}
 \seealso{
 \code{\link[tidyr]{pivot_longer}}, \code{\link[ggplot2]{ggplot}}
 }

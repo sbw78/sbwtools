@@ -21,7 +21,7 @@ to FALSE.}
 \item{B}{Number of bootstrap resamples. Defaults to 1000.}
 }
 \value{
-A data frame with variables \code{mean}, \code{ci_low}, \code{ci_high}, \code{sd}, \code{n}.
+A data frame with variables \verb{mean_\{\{.summary_var\}\}}, \code{ci_low}, \code{ci_high}, \code{sd}, \code{n}.
 If the data frame is grouped, grouping variable will also be listed.
 }
 \description{

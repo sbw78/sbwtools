@@ -11,28 +11,24 @@
 #' @param ci_high Maximum confidence interval variable Defaults to `ci_high`
 #' @param xintercept Value of x-intercept for vertical dotted line
 #' @export
-#' @examples
-#' forest_plot
 
 make_forest_plot <- function(d, .measure_var, .group_var,
                         xlab = NULL, ylab = NULL,
                         ci_low = ci_low,
                         ci_high = ci_high,
                         xintercept = NULL) {
-  require(ggplot2)
-  require(dplyr)
-  require(jtools)
   # x = measure_var
   # xmin = ci_low
   # xmax = ci_high
   # y = group_var
-  require(ggplot2)
   # check for inputs ====
   if (missing(.measure_var)) {
     stop("Must provide argument for '.measure_var'")
   } else if (missing(.group_var)) {
     stop("Must provide at least one argument for '.group_var'")
   }
+
+
 
   # get function args ----
   measure_var <- dplyr::enquo(.measure_var)
@@ -42,7 +38,7 @@ make_forest_plot <- function(d, .measure_var, .group_var,
 
   # build plot  ----
   p <- ggplot2::ggplot(
-    d, aes(x = {{ measure_var }}, y = {{ group_var }},
+    d, ggplot2::aes(x = {{ measure_var }}, y = {{ group_var }},
            xmin = {{ ci_low }}, xmax = {{ ci_high }})) + # uses default colnames from ci_df
     ggplot2::geom_pointrange(shape = 18) +
     ggplot2::geom_vline(lty=2, xintercept = xintercept) +
