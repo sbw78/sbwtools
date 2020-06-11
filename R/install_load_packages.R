@@ -61,7 +61,8 @@ install_load_packages <- function(packages, github_packages) {
   }
   if (exists("packages", envir = globalenv())) {
     rm(packages, envir = globalenv())
-  } else if (exists("github_packages", envir = globalenv())) {
+  }
+  if (exists("github_packages", envir = globalenv())) {
     rm(github_packages, envir = globalenv())
   }
 }
