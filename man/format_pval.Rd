@@ -4,7 +4,7 @@
 \alias{format_pval}
 \title{Format p-value}
 \usage{
-format_pval(p, digits = 3, leading_zero = FALSE)
+format_pval(p, digits = 3, zero = FALSE)
 }
 \arguments{
 \item{p}{One or more p-values as either a numeric vector or numeric variable
@@ -19,7 +19,9 @@ A character vector of rounded p-values. Any p-values less than .001
 are shown as "< .001"
 }
 \description{
-Format p-value
+This function was designed with formatting p-values, but it can be used to
+format any double to a desired number of decimal places, returning it as a
+character vector.
 }
 \examples{
 p.value <- c(.01, .005, .00024)
