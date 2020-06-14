@@ -18,6 +18,7 @@
 #' install_load_packages(packages, github_packages)
 
 install_load_packages <- function(packages, github_packages) {
+  .Deprecated("pacman::p_load")
 
   if (!missing(packages)) {
     installed_packages <- packages %in% rownames(utils::installed.packages())

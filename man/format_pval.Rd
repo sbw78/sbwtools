@@ -4,15 +4,19 @@
 \alias{format_pval}
 \title{Format p-value}
 \usage{
-format_pval(p, digits = 3)
+format_pval(p, digits = 3, leading_zero = FALSE)
 }
 \arguments{
-\item{p}{One or more p-values as either a numeric vector or numeric variable in a data frame.}
+\item{p}{One or more p-values as either a numeric vector or numeric variable
+in a data frame.}
 
 \item{digits}{How many digits to round to? Defaults to 3.}
+
+\item{leading_zero}{Include 0 before decimal point? Default is FALSE}
 }
 \value{
-A character vector of rounded p-values. Any p-values less than .001 are shown as "< .001"
+A character vector of rounded p-values. Any p-values less than .001
+are shown as "< .001"
 }
 \description{
 Format p-value
@@ -20,4 +24,5 @@ Format p-value
 \examples{
 p.value <- c(.01, .005, .00024)
 format_pval(p.value)
+format_pval(p.value, leading_zero = TRUE)
 }

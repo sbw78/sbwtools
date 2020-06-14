@@ -1,6 +1,8 @@
 Package: sbwtools
 Title: My most frequently used functions
-Version: 0.0.1
+Version: 0.0.0.9004
+Depends:
+    R (>= 3.6)
 Imports:
     devtools,
     dplyr,
@@ -12,7 +14,8 @@ Imports:
     rlang,
     tidyr,
     stats,
-    utils
+    utils,
+    pacman
 Authors@R: 
     person(given = "S. Bryan",
            family = "West",

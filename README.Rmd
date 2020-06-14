@@ -1,8 +1,9 @@
 ---
-author: S. Bryan West
+title: "README for package `sbwtools`"
+author: "Author: S. Bryan West<br>"
 output: 
-  md_document:
-    variant: markdown_github
+  github_document:
+    html_preview: true
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -21,7 +22,8 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-**sbwtools** is a package containing my most frequently used custom functions.
+**sbwtools** is a package containing my most frequently used custom functions I
+have either written myself or borrowed from other, more skilled programmers.
 
 ## System Information
 
@@ -40,10 +42,21 @@ sbwtools is only available from [GitHub](https://github.com/). Install with:
 devtools::install_github("sbw78/sbwtools")
 ```
 
+## Credits
+
+Credit to [Kevin Ushey](github.com/kevinushey/etc) for the functions [hh](# hh),
+[ht](# ht), [last](# last), [se](# se). He created these functions for his 
+.Rprofile dotfile, which you can find at his github repo.
+
+Credit to [Jacob Long](https://jacob-long.com) for the `theme_apa` used in 
+[`make_forest_plot`](# make_forest_plot).
+
 ## Function examples 
 
-`ci_df`: Build a dataframe with the mean and confidence intervals
-of a continuous variable, with optional grouping.
+### `ci_df`
+
+Build a dataframe with the mean and confidence intervals of a continuous 
+variable, with optional grouping.
 
 ```{r ci_df}
 library(sbwtools)
@@ -54,7 +67,12 @@ ci_data <- iris %>%
 ```
 
 
-`ci_boot_df`: Same as `ci_df`, but with bootstrapped sampling
+
+****
+
+### `ci_boot_df`
+
+Same as `ci_df`, but with bootstrapped sampling
 
 ```{r ci_boot_df}
 ci_boot_data <- iris %>% 
@@ -63,7 +81,12 @@ ci_boot_data <- iris %>%
 ```
 
 
-`custom_kable`: Customized `knitr::kable` output.
+
+****
+
+### `custom_kable`
+
+Customized `knitr::kable` output.
 
 ```{r custom_kable, eval = FALSE}
 custom_kable(ci_data, caption = "Summarized data from iris",
@@ -75,7 +98,12 @@ custom_kable(ci_data, caption = "Summarized data from iris",
 ```
 
 
-`format_pval`: Format p-values (i.e. "< .001" for values less than .001).
+
+****
+
+### `format_pval`
+
+Format p-values (i.e. "< .001" for values less than .001).
 
 ```{r format_pval}
 fit <- lm(Sepal.Length ~ Species, data = iris)
@@ -89,9 +117,16 @@ mutate(summary_df, p.value = format_pval(p.value))
 ```
 
 
+
+****
+
+### `hh` and `ht`
+
 `hh`: Get first 5 rows and first 5 columns of a data frame or matrix
 
 `ht`: Get the first 10 rows and last 10 rows of a data frame or matrix.
+
+Credit: [Kevin Ushey](github.com/kevinushey/etc)
 
 ```{r hh ht}
 hh(iris)
@@ -100,9 +135,19 @@ ht(iris)
 ```
 
 
-`install_load_packages`: This function will check for each package in the
-user-defined and install them if they are missing, and then load them. It also
-takes a list of github packages and their repos.
+
+****
+
+### `install_load_packages`
+
+**DEPRECATED** 
+
+Use [`pacman::p_load`](https://trinker.github.io/pacman) instead.
+
+This function will check for each package in a user-created character vector of
+package names (CRAN only) and install (if they are missing) and load them. It 
+also takes a list of github packages (optional) and their repos and will do the 
+same thing.
 
 ```{r install_load_packages, eval = FALSE}
 packages <- c("tidyverse", "devtools")
@@ -112,14 +157,29 @@ github_packages <- list(package = c("fancyCorr", "report"),
 install_load_packages(packages, github_packages)
 ```
 
-`last`: Get the last element of a vector or list
+****
+
+### `last`
+
+Get the last element of a vector or list.
+
+Credit: [Kevin Ushey](github.com/kevinushey/etc)
 
 ```{r}
 last(letters)
 ```
 
 
-`make_forest_plot`: Build a forest plot.
+****
+
+### `make_forest_plot`
+
+Build a forest plot.
+
+Credit: [Jacob Long](https://jacob-long.com), author of the 
+[jtools package](https://jtools.jacob-long.com "jtools") 
+([github](https://github.com/jacob-long/jtools "GitHub")) from which this function 
+borrows the `ggplot2` theme `theme_apa()`.
 
 ```{r make_forest_plot}
 p <- make_forest_plot(ci_data, mean_Petal.Length, Species, xlab = "Mean petal length",
@@ -129,7 +189,11 @@ p
 ```
 
 
-`regex_build`: Combine a character vector into a single regex list.
+****
+
+### `regex_build`
+
+Combine a character vector into a single regex list.
 
 ```{r regex_build}
 regex_build(c("apples", "oranges", "bananas"))
@@ -137,7 +201,13 @@ regex_build(c("apples", "passion fruit", "oranges"), modifier = "multi")
 ```
 
 
-`se`: Calculate standard error.
+****
+
+### `se`
+
+Calculate standard error.
+
+Credit: [Kevin Ushey](github.com/kevinushey/etc)
 
 ```{r se}
 se(iris$Sepal.Length)
