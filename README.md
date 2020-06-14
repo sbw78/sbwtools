@@ -16,7 +16,7 @@ skilled programmers.
 
 ## System Information
 
-Updated on 2020-06-13 20:55:41
+Updated on 2020-06-13 21:50:33
 
 ``` r
 sessioninfo::platform_info()
@@ -45,12 +45,12 @@ devtools::install_github("sbw78/sbwtools")
 ## Credits
 
 Credit to [Kevin Ushey](github.com/kevinushey/etc) for the functions
-[hh](#%20hh), [ht](#%20ht), [last](#%20last), [se](#%20se). He created
-these functions for his .Rprofile dotfile, which you can find at his
-github repo.
+[hh](#hh%20and%20ht), [ht](#hh%20and%20ht), [last](#last), [se](#se). He
+created these functions for his .Rprofile dotfile, which you can find at
+his github repo.
 
 Credit to [Jacob Long](https://jacob-long.com) for the `theme_apa` used
-in [`make_forest_plot`](#%20make_forest_plot).
+in [`make_forest_plot`](#make_forest_plot).
 
 ## Function examples
 
