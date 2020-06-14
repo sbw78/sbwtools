@@ -16,7 +16,7 @@ skilled programmers.
 
 ## System Information
 
-Updated on 2020-06-13 21:50:33
+Updated on 2020-06-13 22:06:27
 
 ``` r
 sessioninfo::platform_info()
@@ -221,7 +221,7 @@ this function borrows the `ggplot2` theme `theme_apa()`.
 
 ``` r
 p <- make_forest_plot(ci_data, mean_Petal.Length, Species, xlab = "Mean petal length",
-                 ylab = "Species", ci_low = ci_low, ci_high = ci_high)
+                 ylab = "Species", ci_low, ci_high)
 
 p
 ```

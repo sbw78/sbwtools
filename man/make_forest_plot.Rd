@@ -10,8 +10,8 @@ make_forest_plot(
   .group_var,
   xlab = NULL,
   ylab = NULL,
-  ci_low = ci_low,
-  ci_high = ci_high,
+  ci_low,
+  ci_high,
   xintercept = NULL
 )
 }

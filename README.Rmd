@@ -182,7 +182,7 @@ borrows the `ggplot2` theme `theme_apa()`.
 
 ```{r make_forest_plot}
 p <- make_forest_plot(ci_data, mean_Petal.Length, Species, xlab = "Mean petal length",
-                 ylab = "Species", ci_low = ci_low, ci_high = ci_high)
+                 ylab = "Species", ci_low, ci_high)
 
 p
 ```

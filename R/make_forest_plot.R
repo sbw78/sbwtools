@@ -14,8 +14,8 @@
 
 make_forest_plot <- function(d, .measure_var, .group_var,
                         xlab = NULL, ylab = NULL,
-                        ci_low = ci_low,
-                        ci_high = ci_high,
+                        ci_low,
+                        ci_high,
                         xintercept = NULL) {
   # x = measure_var
   # xmin = ci_low
@@ -42,8 +42,7 @@ make_forest_plot <- function(d, .measure_var, .group_var,
            xmin = {{ ci_low }}, xmax = {{ ci_high }})) + # uses default colnames from ci_df
     ggplot2::geom_pointrange(shape = 18) +
     ggplot2::geom_vline(lty=2, xintercept = xintercept) +
-    ggplot2::ylab(ylab) +
-    ggplot2::xlab(xlab) +
+    ggplot2::labs(x = xlab, y = ylab)
     jtools::theme_apa() +
     ggplot2::theme(text = ggplot2::element_text(family = "Helvetica"),
                    plot.subtitle = ggplot2::element_text(face = "italic"),
