@@ -31,5 +31,5 @@ Calculate mean with confidence intervals from boostrapped samples.
 ci_boot_df(mtcars, mpg, cyl, gear)
 }
 \seealso{
-\code{\link[Hmisc:smean.cl.boot]{Hmisc::smean.cl.boot()}} which this function utilizes
+\code{\link[Hmisc:smean.sd]{Hmisc::smean.cl.boot()}} which this function utilizes
 }

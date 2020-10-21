@@ -106,7 +106,7 @@ Format p-values (i.e. "< .001" for values less than .001).
 
 ```{r format_pval}
 fit <- lm(Sepal.Length ~ Species, data = iris)
-summary_df <- summary(fit) %>% broom::tidy()
+summary_df <- broom::tidy(fit)
 
 # Without formatting p-value
 summary_df
@@ -137,24 +137,6 @@ ht(iris)
 
 ****
 
-### `install_load_packages`
-
-**DEPRECATED** 
-
-Use [`pacman::p_load`](https://trinker.github.io/pacman) instead.
-
-This function will check for each package in a user-created character vector of
-package names (CRAN only) and install (if they are missing) and load them. It 
-also takes a list of github packages (optional) and their repos and will do the 
-same thing.
-
-```{r install_load_packages, eval = FALSE}
-packages <- c("tidyverse", "devtools")
-github_packages <- list(package = c("fancyCorr", "report"),
-                        repo = c("sbw78/fancyCorr", "easystats/report"))
-
-install_load_packages(packages, github_packages)
-```
 
 ****
 
