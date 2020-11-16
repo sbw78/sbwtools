@@ -20,10 +20,10 @@ format_pval <- function(p, digits = 3, zero = FALSE) {
   pvalue_chr <- sprintf("%.*f", digits, p)
   pbase <- 10^-digits
   if (isFALSE(zero)) {
-    pformat <- ifelse(abs(p) < pbase, paste("<", pbase), pvalue_chr)
+    pformat <- ifelse(abs(p) < pbase, paste0("<", pbase), pvalue_chr)
     pformat <- gsub("0\\.", "\\.", pformat)
   } else {
-    pformat <- ifelse(abs(p) < pbase, paste("<", pbase), pvalue_chr)
+    pformat <- ifelse(abs(p) < pbase, paste0("<", pbase), pvalue_chr)
   }
   pformat
 }

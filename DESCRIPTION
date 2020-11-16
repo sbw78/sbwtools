@@ -1,6 +1,6 @@
 Package: sbwtools
 Title: My most frequently used functions
-Version: 0.0.1
+Version: 0.0.1.1
 Depends:
     R (>= 3.6)
 Imports:
