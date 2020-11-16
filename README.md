@@ -15,7 +15,7 @@ skilled programmers.
 
 ## System Information
 
-Updated on 2020-10-21 15:32:07
+Updated on 2021-01-04 14:49:54
 
     sessioninfo::platform_info()
     #>  setting  value                       
@@ -27,7 +27,7 @@ Updated on 2020-10-21 15:32:07
     #>  collate  en_US.UTF-8                 
     #>  ctype    en_US.UTF-8                 
     #>  tz       America/New_York            
-    #>  date     2020-10-21
+    #>  date     2021-01-04
 
 ## Installation
 
@@ -114,9 +114,9 @@ Format p-values (i.e. “&lt; .001” for values less than .001).
     #> # A tibble: 3 x 5
     #>   term              estimate std.error statistic p.value
     #>   <chr>                <dbl>     <dbl>     <dbl> <chr>  
-    #> 1 (Intercept)           5.01    0.0728     68.8  < .001 
-    #> 2 Speciesversicolor     0.93    0.103       9.03 < .001 
-    #> 3 Speciesvirginica      1.58    0.103      15.4  < .001
+    #> 1 (Intercept)           5.01    0.0728     68.8  <.001  
+    #> 2 Speciesversicolor     0.93    0.103       9.03 <.001  
+    #> 3 Speciesvirginica      1.58    0.103      15.4  <.001
 
 ------------------------------------------------------------------------
 

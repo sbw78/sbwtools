@@ -19,7 +19,11 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
-## v0.0.1
+## v0.0.1.1
+
+  - Added function to create standard directories I use with most projects
+
+## v0.0.1.0
 
   - Removed `install_load_packages`. Replace with 
   [`pacman` (github link)](https://github.com/trinker/pacman).

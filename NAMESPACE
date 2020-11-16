@@ -2,6 +2,7 @@
 
 export(ci_boot_df)
 export(ci_df)
+export(create_default_dirs)
 export(custom_kable)
 export(format_pval)
 export(hh)

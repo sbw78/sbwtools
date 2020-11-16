@@ -1,12 +1,21 @@
 News for package `sbwtools`
 ================
 Author: S. Bryan West<br>
-Updated 21 October, 2020
+Updated 04 January, 2021
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-v0.0.0.9010
------------
+## v0.0.1.1
+
+-   Added function to create standard directories I use with most
+    projects
+
+## v0.0.1.0
+
+-   Removed `install_load_packages`. Replace with [`pacman` (github
+    link)](https://github.com/trinker/pacman).
+
+## v0.0.0.9004
 
 Note: I downgraded the version number from 0.0.1 to 0.0.0.9004 because
 this package is not a stable or final release and is still under active
@@ -20,7 +29,7 @@ development.
 -   Updated `make_forest_plot` to place axis labels within `labs()`
     section instead of as `xlab` and `ylab`.
 
--   Removed `install_load_packages`. Replace with [`pacman` (github
+-   Deprecated `install_load_packages`. Replace with [`pacman` (github
     link)](https://github.com/trinker/pacman).
 
 -   README updated to credit authors of functions I have borrowed and

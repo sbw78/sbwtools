@@ -65,8 +65,6 @@ ci_data <- iris %>%
   ci_boot_df(., Petal.Length, Species)
 ```
 
-
-
 ****
 
 ### `ci_boot_df`
