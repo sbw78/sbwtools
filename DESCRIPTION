@@ -24,6 +24,7 @@ Authors@R:
            email = "sbw78@cornell.edu",
            comment = c(ORCID = "0000-0003-3327-0499"))
 Description: This is a package that contains some of the functions I have written or picked up and use frequently in my work..
+Date: 2021-02-18
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
