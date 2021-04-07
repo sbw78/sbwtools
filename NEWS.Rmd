@@ -6,7 +6,7 @@ output:
   github_document:
     html_preview: true
   # md_document:
-    # variant: markdown_github 
+    # variant: markdown_github
 ---
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
@@ -19,6 +19,10 @@ knitr::opts_chunk$set(
   out.width = "100%"
 )
 ```
+## v0.0.1.2
+  
+  - Added a document template for course labs and homework assignments
+
 ## v0.0.1.1
 
   - Added function to create standard directories I use with most projects

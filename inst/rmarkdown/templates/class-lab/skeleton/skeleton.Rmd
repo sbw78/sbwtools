@@ -1,0 +1,50 @@
+---
+title: 'Title'
+author: "Bryan West"
+date: '`r format(Sys.Date(), "%B %d, %Y")`'
+output: 
+  pdf_document:
+    keep_tex: false
+    latex_engine: xelatex
+    number_sections: false
+    
+mainfont: TeX Gyre Pagella
+sansfont: Gill Sans
+monofont: Lucida Console
+mathfont: TeX Gyre Pagella Math
+fontsize: 11pt
+linkcolor: blue
+    
+header-includes:
+  - \usepackage{float}
+  - \usepackage[labelsep=newline,labelfont=bf]{caption}
+  - \captionsetup{justification=raggedright,singlelinecheck=false}
+fig_caption: yes
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE, echo = FALSE, warning = FALSE, message = FALSE}
+library(here)
+library(knitr)
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  tidy = 'styler',
+  fig.align = "left",
+  fig.pos = "H",
+  comment = NA,
+  tidy.opts = list(
+    transformers = styler::tidyverse_style(strict = TRUE)
+  )
+)
+
+invisible(
+  lapply(list.files(here("R"), pattern = "*.R", full.names = TRUE), source)
+)
+options(knitr.table.format = "latex")
+ggplot2::theme_set(ggplot2::theme_light())
+
+```
+
+## Question 1

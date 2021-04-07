@@ -1,9 +1,13 @@
 News for package `sbwtools`
 ================
 Author: S. Bryan West<br>
-Updated 04 January, 2021
+Updated 07 April, 2021
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+## v0.0.1.2
+
+-   Added a document template for course labs and homework assignments
 
 ## v0.0.1.1
 

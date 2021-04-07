@@ -63,8 +63,9 @@ custom_kable(mtcars, caption = "A kable of mtcars")
 }
 \references{
 See
-  \url{https://github.com/yihui/knitr-examples/blob/master/091-knitr-table.Rnw}
-   for some examples in LaTeX, but they also apply to other document formats.
+  \url{https://bookdown.org/yihui/rmarkdown-cookbook/kable.html} for some
+  examples about this function, including specific arguments according to the
+  \code{format} selected.
 }
 \seealso{
 See \code{\link[knitr]{kable}} and \code{\link[kableExtra]{kable_styling}}
