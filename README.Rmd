@@ -21,8 +21,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-**sbwtools** is a package containing my most frequently used custom functions I
-have either written myself or borrowed from other, more skilled programmers.
+**sbwtools** is a package containing my most frequently used custom functions I have either written myself or borrowed from other, more skilled programmers.
 
 ## System Information
 

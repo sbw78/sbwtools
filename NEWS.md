@@ -1,9 +1,14 @@
 News for package `sbwtools`
 ================
 Author: S. Bryan West<br>
-Updated 07 April, 2021
+Updated 24 April, 2021
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
+
+## v.0.0.1.3
+
+-   Added function to create `analysis_data` and `original_data`
+    directories.
 
 ## v0.0.1.2
 
