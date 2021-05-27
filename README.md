@@ -6,6 +6,8 @@ Author: S. Bryan West<br>
 
 # sbwtools
 
+## Development Branch
+
 <!-- badges: start -->
 <!-- badges: end -->
 
@@ -15,7 +17,7 @@ skilled programmers.
 
 ## System Information
 
-Updated on 2021-04-24 17:14:37
+Updated on 2021-05-27 15:22:41
 
 ``` r
 sessioninfo::platform_info()
@@ -28,7 +30,7 @@ sessioninfo::platform_info()
 #>  collate  en_US.UTF-8                 
 #>  ctype    en_US.UTF-8                 
 #>  tz       America/New_York            
-#>  date     2021-04-24
+#>  date     2021-05-27
 ```
 
 ## Installation
@@ -116,18 +118,18 @@ summary_df
 #> # A tibble: 3 x 5
 #>   term              estimate std.error statistic   p.value
 #>   <chr>                <dbl>     <dbl>     <dbl>     <dbl>
-#> 1 (Intercept)           5.01    0.0728     68.8  1.13e-113
-#> 2 Speciesversicolor     0.93    0.103       9.03 8.77e- 16
-#> 3 Speciesvirginica      1.58    0.103      15.4  2.21e- 32
+#> 1 (Intercept)          5.01     0.0728     68.8  1.13e-113
+#> 2 Speciesversicolor    0.930    0.103       9.03 8.77e- 16
+#> 3 Speciesvirginica     1.58     0.103      15.4  2.21e- 32
 
 # Formatted p-value
 mutate(summary_df, p.value = format_pval(p.value))
 #> # A tibble: 3 x 5
 #>   term              estimate std.error statistic p.value
 #>   <chr>                <dbl>     <dbl>     <dbl> <chr>  
-#> 1 (Intercept)           5.01    0.0728     68.8  <.001  
-#> 2 Speciesversicolor     0.93    0.103       9.03 <.001  
-#> 3 Speciesvirginica      1.58    0.103      15.4  <.001
+#> 1 (Intercept)          5.01     0.0728     68.8  <.001  
+#> 2 Speciesversicolor    0.930    0.103       9.03 <.001  
+#> 3 Speciesvirginica     1.58     0.103      15.4  <.001
 ```
 
 ------------------------------------------------------------------------
