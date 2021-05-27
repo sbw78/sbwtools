@@ -1,6 +1,6 @@
 Package: sbwtools
 Title: My most frequently used functions
-Version: 0.0.1.3
+Version: 0.0.1.3.01
 Depends:
     R (>= 3.6)
 Imports:
@@ -15,8 +15,7 @@ Imports:
     tidyr,
     stats,
     utils,
-    usethis,
-    pacman
+    usethis
 Authors@R: 
     person(given = "S. Bryan",
            family = "West",
