@@ -25,6 +25,11 @@ knitr::opts_chunk$set(
 
 **sbwtools** is a package containing my most frequently used custom functions I have either written myself or borrowed from other, more skilled programmers.
 
+### News
+
+Updated `ci_df` and `ci_boot_df` functions to use `dplyr::reframe()` instead of `dplyr::summarize()`, 
+as of `dplyr` [version 1.1.0](https://www.tidyverse.org/blog/2023/02/dplyr-1-1-0-pick-reframe-arrange/#reframe)
+
 ## System Information
 
 Updated on `r Sys.time()`
@@ -63,7 +68,7 @@ library(sbwtools)
 library(dplyr)
 ci_data <- iris %>% 
   as_tibble() %>% 
-  ci_boot_df(., Petal.Length, Species)
+  ci_df(., Petal.Length, Species)
 ```
 
 ****
