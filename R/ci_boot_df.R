@@ -41,16 +41,15 @@ ci_boot_df <- function(.data, .summary_var, ..., ci = 0.95, groups_col = FALSE,
   summary_nm <- paste0("mean_", dplyr::quo_name(summary_var))
 
   # Build output df ----
-  boot_df <- dplyr::summarize(df,
-                              ci_out = Hmisc::smean.cl.boot({{ summary_var }},
-                                                            conf.int = ci,
-                                                            B = 1000),
-                              conf = c(paste0(summary_nm), "ci_low", "ci_high"),
-                              sd = stats::sd({{ summary_var }}, na.rm = TRUE),
-                              n = dplyr::n())
-  boot_df <- dplyr::ungroup(boot_df)
-  boot_df <- tidyr::pivot_wider(boot_df, names_from = .data$conf, values_from = .data$ci_out)
-  boot_df <- dplyr::relocate(boot_df, sd, .after = .data$ci_high)
+  boot_df <- dplyr::reframe(df,
+                            ci_out = Hmisc::smean.cl.boot({{ summary_var }},
+                                                          conf.int = ci,
+                                                          B = 1000),
+                            conf = c(paste0(summary_nm), "ci_low", "ci_high"),
+                            sd = stats::sd({{ summary_var }}, na.rm = TRUE),
+                            n = dplyr::n())
+  boot_df <- tidyr::pivot_wider(boot_df, names_from = conf, values_from = ci_out)
+  boot_df <- dplyr::relocate(boot_df, sd, .after = ci_high)
 
   # create groups_col ----
   if (groups_col) {
