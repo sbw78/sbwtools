@@ -32,11 +32,11 @@ are included if \code{rownames(x)} is neither \code{NULL} nor identical to
 
 \item{format}{A character string. Possible values are \code{latex},
 \code{html}, \code{pipe} (Pandoc's pipe tables), \code{simple} (Pandoc's
-simple tables), and \code{rst}. The value of this argument will be
-automatically determined if the function is called within a \pkg{knitr}
-document. The \code{format} value can also be set in the global option
-\code{knitr.table.format}. If \code{format} is a function, it must return a
-character string.}
+simple tables), \code{rst}, and \code{jira}. The value of this argument
+will be automatically determined if the function is called within a
+\pkg{knitr} document. The \code{format} value can also be set in the global
+option \code{knitr.table.format}. If \code{format} is a function, it must
+return a character string.}
 
 \item{escape}{Boolean; whether to escape special characters when producing
 HTML or LaTeX tables. When \code{escape = FALSE}, you have to make sure
@@ -57,6 +57,12 @@ Missing values (\code{NA}) in the table are displayed as \code{NA} by
 default. If you want to display them with other characters, you can set the
 option \code{knitr.kable.NA}, e.g. \code{options(knitr.kable.NA = '')} to
 hide \code{NA} values.
+}
+\note{
+When using \code{kable()} as a \emph{top-level} expression, you do not
+  need to explicitly \code{print()} it due to R's automatic implicit
+  printing. When it is wrapped inside other expressions (such as a
+  \code{\link{for}} loop), you must explicitly \code{print(kable(...))}.
 }
 \examples{
 custom_kable(mtcars, caption = "A kable of mtcars")

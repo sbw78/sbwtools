@@ -48,8 +48,8 @@ ci_boot_df <- function(.data, .summary_var, ..., ci = 0.95, groups_col = FALSE,
                             conf = c(paste0(summary_nm), "ci_low", "ci_high"),
                             sd = stats::sd({{ summary_var }}, na.rm = TRUE),
                             n = dplyr::n())
-  boot_df <- tidyr::pivot_wider(boot_df, names_from = conf, values_from = ci_out)
-  boot_df <- dplyr::relocate(boot_df, sd, .after = ci_high)
+  boot_df <- tidyr::pivot_wider(boot_df, names_from = "conf", values_from = "ci_out")
+  boot_df <- dplyr::relocate(boot_df, sd, .after = "ci_high")
 
   # create groups_col ----
   if (groups_col) {
