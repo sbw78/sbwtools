@@ -9,9 +9,6 @@ use_packages(open = interactive())
 \arguments{
 \item{open}{Logical value, whether to open packages.R for editing}
 }
-\value{
-
-}
 \description{
 Create R/packages.R file
 }
